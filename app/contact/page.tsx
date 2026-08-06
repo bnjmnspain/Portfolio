@@ -59,12 +59,17 @@ export default function ContactPage() {
       </Reveal>
 
       <Reveal direction="right">
-        <div className="flex items-center justify-center">
-          <img
-            src="/image.png"
-            alt="Graduation photo"
-            className="rounded-lg border border-line max-w-full h-auto"
-          />
+        <div>
+          <div className="section-label mb-6">
+            <span>Graduation photo</span>
+          </div>
+          <div className="flex items-center justify-center">
+            <img
+              src="/image.png"
+              alt="Graduation photo"
+              className="rounded-lg border border-line max-w-full h-auto"
+            />
+          </div>
         </div>
       </Reveal>
     </div>
