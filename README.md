@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Information Technology Portfolio
 
 A minimalist, high-performance developer portfolio built with Next.js 14 (App
@@ -109,3 +110,6 @@ vercel
 - `npm run start` — run the production build locally
 - `npm run typecheck` — TypeScript check with no emit
 - `npm run lint` — ESLint
+=======
+# Portfolio
+>>>>>>> 2c9490a93f556ea5c4e821beba95b1fef032ad89
