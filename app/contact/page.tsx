@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Github, Linkedin, MapPin, FileDown } from "lucide-react";
 import { siteConfig } from "@/lib/config";
-import { ContactForm } from "@/components/ContactForm";
 import { CopyEmailButton } from "@/components/CopyEmailButton";
 import { Reveal } from "@/components/Reveal";
 
@@ -17,7 +16,7 @@ export default function ContactPage() {
         <h1 className="font-serif text-3xl sm:text-4xl mb-8">
           Have a project in mind?
           <br />
-          Let&apos;s build it.
+          Let&apos;s work together.
         </h1>
 
         <ul className="space-y-4 text-sm">
@@ -60,7 +59,13 @@ export default function ContactPage() {
       </Reveal>
 
       <Reveal direction="right">
-        <ContactForm />
+        <div className="flex items-center justify-center">
+          <img
+            src="/image.png"
+            alt="Graduation photo"
+            className="rounded-lg border border-line max-w-full h-auto"
+          />
+        </div>
       </Reveal>
     </div>
   );

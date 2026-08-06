@@ -7,7 +7,8 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
 import { ProjectCardSkeleton } from "@/components/LoadingSkeleton";
 import { siteConfig } from "@/lib/config";
-import { getGithubRepos, getGithubUser } from "@/services/github";
+import { GithubStatsClient } from "@/components/GithubStatsClient";
+import { FeaturedProjectsClient } from "@/components/FeaturedProjectsClient";
 
 export default function HomePage() {
   return (
@@ -21,7 +22,7 @@ export default function HomePage() {
           </div>
         </Reveal>
         <Suspense fallback={<p className="text-center text-sm text-ink-soft">Loading GitHub stats…</p>}>
-          <GithubStatsSection />
+          <GithubStatsClient />
         </Suspense>
       </section>
 
@@ -46,43 +47,9 @@ export default function HomePage() {
             </div>
           }
         >
-          <FeaturedProjects />
+          <FeaturedProjectsClient />
         </Suspense>
       </section>
     </>
-  );
-}
-
-async function GithubStatsSection() {
-  const [user, repos] = await Promise.all([
-    getGithubUser(siteConfig.githubUsername),
-    getGithubRepos(siteConfig.githubUsername),
-  ]);
-  const totalStars = repos.reduce((sum, r) => sum + r.stargazers_count, 0);
-  return <GithubStats user={user} repoCount={repos.length} totalStars={totalStars} />;
-}
-
-async function FeaturedProjects() {
-  const repos = await getGithubRepos(siteConfig.githubUsername);
-  const featured = [...repos]
-    .sort((a, b) => b.stargazers_count - a.stargazers_count)
-    .slice(0, 3);
-
-  if (featured.length === 0) {
-    return (
-      <p className="text-sm text-ink-soft">
-        No repositories found yet for{" "}
-        <code className="font-mono">{siteConfig.githubUsername}</code>. Update{" "}
-        <code className="font-mono">githubUsername</code> in <code>lib/config.ts</code>.
-      </p>
-    );
-  }
-
-  return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {featured.map((repo, i) => (
-        <ProjectCard key={repo.id} repo={repo} delay={i * 0.08} />
-      ))}
-    </div>
   );
 }

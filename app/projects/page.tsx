@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { siteConfig } from "@/lib/config";
-import { getGithubRepos } from "@/services/github";
 import { ProjectsExplorer } from "@/components/ProjectsExplorer";
 import { ProjectsGridSkeleton } from "@/components/LoadingSkeleton";
 import { Reveal } from "@/components/Reveal";
+import { ProjectsListClient } from "@/components/ProjectsListClient";
 
 export const metadata: Metadata = { title: "Projects" };
 
@@ -25,13 +25,8 @@ export default function ProjectsPage() {
         </p>
       </Reveal>
       <Suspense fallback={<ProjectsGridSkeleton />}>
-        <ProjectsList />
+        <ProjectsListClient />
       </Suspense>
     </div>
   );
-}
-
-async function ProjectsList() {
-  const repos = await getGithubRepos(siteConfig.githubUsername);
-  return <ProjectsExplorer repos={repos} />;
 }
