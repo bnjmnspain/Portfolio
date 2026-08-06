@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bnjmnspain.github.io/Portfolio/sitemap.xml
