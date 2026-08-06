@@ -1,4 +1,4 @@
-# Senior Developer Portfolio
+# Information Technology Portfolio
 
 A minimalist, high-performance developer portfolio built with Next.js 14 (App
 Router), React, TypeScript, Tailwind CSS, and Framer Motion. Projects are

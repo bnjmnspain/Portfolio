@@ -20,7 +20,7 @@ export const siteConfig: SiteConfig = {
    githubUsername: "bnjmnspain",
    linkedinUrl: "https://www.linkedin.com/in/benjamin-florence-nicol-saludes-235426426/",
    resumeUrl: "/Benjami.Saludes.Resume.pdf",
-  siteUrl: "https://example.com",
+  siteUrl: "https://bnjmnspain.github.io/Portfolio",
 
   socials: [
     { label: "GitHub", url: "https://github.com/bnjmnspain", icon: "github" },
