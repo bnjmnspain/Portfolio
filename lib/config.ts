@@ -19,7 +19,7 @@ export const siteConfig: SiteConfig = {
   email: "espanaflorence@gmail.com",
    githubUsername: "bnjmnspain",
    linkedinUrl: "https://www.linkedin.com/in/benjamin-florence-nicol-saludes-235426426/",
-   resumeUrl: "/Benjami.Saludes.Resume.pdf",
+   resumeUrl: "/Portfolio/Benjami.Saludes.Resume.pdf",
   siteUrl: "https://bnjmnspain.github.io/Portfolio",
 
   socials: [
@@ -44,6 +44,9 @@ export const siteConfig: SiteConfig = {
 
   skills: [
     // Frontend
+    { name: "TypeScript", category: "Frontend", level: 4, years: 1 },
+    { name: "Next.js", category: "Frontend", level: 3, years: 1 },
+    { name: "Tailwind CSS", category: "Frontend", level: 3, years: 1 },
     { name: "Web & UI Design", category: "Frontend", level: 3, years: 1 },
     // Backend
     { name: "Application Development", category: "Backend", level: 3, years: 1 },

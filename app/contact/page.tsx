@@ -3,6 +3,7 @@ import { Github, Linkedin, MapPin, FileDown } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 import { CopyEmailButton } from "@/components/CopyEmailButton";
 import { Reveal } from "@/components/Reveal";
+import { ResumeButton } from "@/components/ResumeButton";
 
 export const metadata: Metadata = { title: "Contact" };
 
@@ -51,9 +52,7 @@ export default function ContactPage() {
           </li>
           <li className="flex items-center gap-3">
             <FileDown size={15} className="text-ink-soft" />
-            <a href={siteConfig.resumeUrl} download className="hover:underline underline-offset-4">
-              Download résumé
-            </a>
+            <ResumeButton className="hover:underline underline-offset-4" />
           </li>
         </ul>
       </Reveal>

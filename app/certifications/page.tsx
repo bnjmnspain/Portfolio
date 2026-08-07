@@ -3,16 +3,16 @@ import { siteConfig } from "@/lib/config";
 import { CertificationCard } from "@/components/CertificationCard";
 import { Reveal } from "@/components/Reveal";
 
-export const metadata: Metadata = { title: "Certifications" };
+export const metadata: Metadata = { title: "Certificates" };
 
-export default function CertificationsPage() {
+export default function CertificatesPage() {
   return (
     <div className="px-5 sm:px-10 py-16 max-w-5xl mx-auto">
       <Reveal>
         <div className="section-label mb-6">
-          <span>Certifications</span>
+          <span>Certificates</span>
         </div>
-        <h1 className="font-serif text-3xl sm:text-4xl mb-16">Certifications</h1>
+        <h1 className="font-serif text-3xl sm:text-4xl mb-16">Certificates</h1>
       </Reveal>
 
       {siteConfig.certifications.length === 0 ? (

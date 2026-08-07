@@ -76,7 +76,7 @@ export function ProjectsExplorer({ repos }: { repos: GithubRepo[] }) {
       {filtered.length === 0 ? (
         <p className="text-sm text-ink-soft">No projects match that search.</p>
       ) : (
-        <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:pb-0">
+        <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:pb-0 sm:auto-rows-fr">
           {filtered.map((repo, i) => (
             <div key={repo.id} className="min-w-[280px] max-w-[280px] shrink-0 sm:min-w-0 sm:max-w-none">
               <ProjectCard repo={repo} delay={Math.min(i, 6) * 0.05} />

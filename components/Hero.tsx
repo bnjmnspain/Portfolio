@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { siteConfig } from "@/lib/config";
+import { ResumeButton } from "@/components/ResumeButton";
 
 const ICONS = { github: Github, linkedin: Linkedin, mail: Mail } as const;
 
@@ -37,7 +38,7 @@ export function Hero() {
           custom={0.1}
           className="font-mono text-xs uppercase tracking-[0.2em] text-ink-soft font-bold"
         >
-          {siteConfig.jobTitle} · {siteConfig.location}
+          {siteConfig.jobTitle}
         </motion.p>
 
         <motion.h1
@@ -79,13 +80,7 @@ export function Hero() {
           >
             Contact Me
           </Link>
-          <a
-            href={siteConfig.resumeUrl}
-            download
-            className="font-sans font-semibold text-sm px-8 py-4 rounded-sm border border-line text-ink-soft hover:text-ink hover:border-ink transition-colors"
-          >
-            Download Resume
-          </a>
+          <ResumeButton className="font-sans font-semibold text-sm px-8 py-4 rounded-sm border border-line text-ink-soft hover:text-ink hover:border-ink transition-colors" />
         </motion.div>
 
         <motion.div

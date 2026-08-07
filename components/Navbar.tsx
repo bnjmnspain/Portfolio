@@ -13,7 +13,7 @@ const NAV_LINKS = [
   { href: "/skills", label: "Skills" },
   { href: "/projects", label: "Projects" },
   { href: "/experience", label: "Experience" },
-  { href: "/certifications", label: "Certifications" },
+  { href: "/certifications", label: "Certificates" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -24,7 +24,16 @@ export function Navbar({ onOpenPalette }: { onOpenPalette: () => void }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <nav className="flex items-center justify-between px-3 sm:px-6 py-2 font-mono text-[10px] sm:text-xs uppercase tracking-widest bg-bg/80 backdrop-blur-sm">
-        <Link href="/" aria-label="Home" className="text-ink">
+        <Link
+          href="/"
+          aria-label="Home"
+          onClick={() => {
+            if (pathname === "/") {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          className="text-ink"
+        >
           <Home size={16} />
         </Link>
 
