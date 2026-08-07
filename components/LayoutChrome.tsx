@@ -21,6 +21,30 @@ export function LayoutChrome({ children }: { children: ReactNode }) {
     return () => window.removeEventListener("keydown", onKeydown);
   }, []);
 
+  useEffect(() => {
+    const existingLinks = document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"]');
+    existingLinks.forEach((link) => link.remove());
+
+    const href = "/Portfolio/box-bag.png?" + Date.now();
+
+    const link = document.createElement("link");
+    link.rel = "icon";
+    link.href = href;
+    link.type = "image/png";
+    document.head.appendChild(link);
+
+    const shortcut = document.createElement("link");
+    shortcut.rel = "shortcut icon";
+    shortcut.href = href;
+    shortcut.type = "image/png";
+    document.head.appendChild(shortcut);
+
+    return () => {
+      document.head.removeChild(link);
+      document.head.removeChild(shortcut);
+    };
+  }, []);
+
   return (
     <>
       <Navbar onOpenPalette={() => setPaletteOpen(true)} />
