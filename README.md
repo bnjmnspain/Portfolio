@@ -59,7 +59,7 @@ GitHub links) updates automatically.
 ```
 app/            routes (App Router) — one folder per page, plus /api/contact
 components/     reusable UI components
-hooks/          useTheme, useScrollProgress
+hooks/          useTheme
 lib/            config.ts (single source of truth), utils, blog reader
 services/       github.ts — all GitHub API calls
 types/          shared TypeScript types

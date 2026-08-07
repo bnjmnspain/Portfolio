@@ -20,9 +20,11 @@ export function ProjectCardSkeleton() {
 
 export function ProjectsGridSkeleton({ count = 6 }: { count?: number }) {
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:pb-0">
       {Array.from({ length: count }).map((_, i) => (
-        <ProjectCardSkeleton key={i} />
+        <div key={i} className="min-w-[280px] max-w-[280px] shrink-0 sm:min-w-0 sm:max-w-none">
+          <ProjectCardSkeleton />
+        </div>
       ))}
     </div>
   );

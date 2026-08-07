@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, Command } from "lucide-react";
-import { siteConfig } from "@/lib/config";
+import { Menu, X, Command, Home } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 
@@ -24,9 +23,9 @@ export function Navbar({ onOpenPalette }: { onOpenPalette: () => void }) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <nav className="flex items-center justify-between px-5 sm:px-10 py-5 font-mono text-xs uppercase tracking-widest bg-bg/80 backdrop-blur-sm">
-        <Link href="/" className="font-medium normal-case tracking-normal text-ink">
-          {siteConfig.name.split(" ").slice(0, 2).join(" ")}
+      <nav className="flex items-center justify-between px-3 sm:px-6 py-2 font-mono text-[10px] sm:text-xs uppercase tracking-widest bg-bg/80 backdrop-blur-sm">
+        <Link href="/" aria-label="Home" className="text-ink">
+          <Home size={16} />
         </Link>
 
         <div className="hidden lg:flex items-center gap-6">

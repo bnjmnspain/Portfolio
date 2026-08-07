@@ -3,7 +3,6 @@
 import { ReactNode, useEffect, useState } from "react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
-import { ScrollProgress } from "./ScrollProgress";
 import { BackToTop } from "./BackToTop";
 import { CommandPalette } from "./CommandPalette";
 import { ErrorBoundary } from "./ErrorBoundary";
@@ -25,7 +24,6 @@ export function LayoutChrome({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <ScrollProgress />
       <Navbar onOpenPalette={() => setPaletteOpen(true)} />
       <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
       <ErrorBoundary>

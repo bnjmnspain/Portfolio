@@ -36,10 +36,16 @@ export function FeaturedProjectsClient() {
 
   if (loading) {
     return (
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <ProjectCardSkeleton />
-        <ProjectCardSkeleton />
-        <ProjectCardSkeleton />
+      <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:pb-0">
+        <div className="min-w-[280px] max-w-[280px] shrink-0 sm:min-w-0 sm:max-w-none">
+          <ProjectCardSkeleton />
+        </div>
+        <div className="min-w-[280px] max-w-[280px] shrink-0 sm:min-w-0 sm:max-w-none">
+          <ProjectCardSkeleton />
+        </div>
+        <div className="min-w-[280px] max-w-[280px] shrink-0 sm:min-w-0 sm:max-w-none">
+          <ProjectCardSkeleton />
+        </div>
       </div>
     );
   }
@@ -59,9 +65,11 @@ export function FeaturedProjectsClient() {
   }
 
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:pb-0">
       {featured.map((repo, i) => (
-        <ProjectCard key={repo.id} repo={repo} delay={i * 0.08} />
+        <div key={repo.id} className="min-w-[280px] max-w-[280px] shrink-0 sm:min-w-0 sm:max-w-none">
+          <ProjectCard repo={repo} delay={i * 0.08} />
+        </div>
       ))}
     </div>
   );
