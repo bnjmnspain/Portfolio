@@ -10,7 +10,7 @@ export default function CertificatesPage() {
     <div className="px-5 sm:px-10 py-16 max-w-5xl mx-auto">
       <Reveal>
         <div className="section-label mb-6">
-          <span>Certificates</span>
+          <span>Certifications</span>
         </div>
         <h1 className="font-serif text-3xl sm:text-4xl mb-16">Certificates</h1>
       </Reveal>
