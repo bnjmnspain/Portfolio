@@ -8,7 +8,7 @@ export function ProjectCard({ repo, delay = 0 }: { repo: GithubRepo; delay?: num
     <Reveal delay={delay}>
       <article className="h-full border border-line rounded-lg p-4 hover:border-ink transition-colors bg-bg flex flex-col">
         <div className="flex items-start justify-between gap-2 mb-1.5">
-          <h3 className="font-serif text-base leading-snug">{repo.name}</h3>
+          <h3 className="font-serif text-base leading-snug line-clamp-2">{repo.name}</h3>
           <div className="flex items-center gap-2 shrink-0">
             {repo.homepage && (
               <a

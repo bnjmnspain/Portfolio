@@ -8,8 +8,9 @@ import { siteConfig } from "@/lib/config";
 
 function fetchGithubRepos(username: string): Promise<GithubRepo[]> {
   return fetch(
-    `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
+    `https://api.github.com/users/${username}/repos?per_page=100&sort=updated&t=${Date.now()}`,
     {
+      cache: "no-store",
       headers: { Accept: "application/vnd.github+json" },
     }
   )
