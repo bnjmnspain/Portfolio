@@ -3,6 +3,7 @@ import { Raleway, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/config";
 import { LayoutChrome } from "@/components/LayoutChrome";
+import { FloatingBackground } from "@/components/FloatingBackground";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -50,7 +51,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${raleway.variable} ${sans.variable} ${mono.variable}`}>
-      <body className="font-sans">
+      <body className="font-sans relative">
+        <FloatingBackground />
         <LayoutChrome>{children}</LayoutChrome>
       </body>
     </html>
