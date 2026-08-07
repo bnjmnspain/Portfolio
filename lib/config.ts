@@ -38,7 +38,7 @@ export const siteConfig: SiteConfig = {
 
   careerHighlights: [
     "Received the IBM Best Improved Award 2026 during a Solutions Delivery internship.",
-    "Designed and shipped an end-to-end ordering system for a resort & hotel client.",
+    "Designed and shipped an end-to-end ordering system for 88 Hotspring Resort.",
     "Test automation, particularly in using Selenium for automated testing and documentation on the JAPAN CSU environment.",
   ],
 
