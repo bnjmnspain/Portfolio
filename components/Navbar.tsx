@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, Command } from "lucide-react";
+import { Menu, X, Compass } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 
@@ -73,10 +73,9 @@ export function Navbar({ onOpenPalette }: { onOpenPalette: () => void }) {
           <button
             onClick={onOpenPalette}
             aria-label="Open command palette"
-            className="hidden sm:flex items-center gap-2 rounded-full border border-line px-3 py-1.5 text-ink-soft hover:text-ink hover:border-ink transition-colors normal-case tracking-normal"
+            className="hidden sm:flex items-center justify-center rounded-full border border-line px-2.5 py-1.5 text-ink-soft hover:text-ink hover:border-ink transition-colors"
           >
-            <Command size={13} />
-            <span>⌘K</span>
+            <Compass size={15} />
           </button>
           <ThemeToggle />
           <button

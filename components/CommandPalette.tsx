@@ -82,7 +82,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                 autoFocus
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Jump to a page, or type a command…"
+                placeholder="Jump to a page only"
                 className="w-full bg-transparent outline-none text-sm text-ink placeholder:text-ink-soft"
               />
               <kbd className="text-[10px] font-mono text-ink-soft border border-line rounded px-1.5 py-0.5">
