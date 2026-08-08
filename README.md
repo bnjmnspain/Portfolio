@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Information Technology Portfolio
 
 A minimalist, high-performance developer portfolio built with Next.js 14 (App
