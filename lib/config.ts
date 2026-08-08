@@ -49,7 +49,8 @@ export const siteConfig: SiteConfig = {
     { name: "Tailwind CSS", category: "Frontend", level: 3, years: 1 },
     { name: "Web & UI Design", category: "Frontend", level: 3, years: 1 },
     // Backend
-    { name: "Application Development", category: "Backend", level: 3, years: 1 },
+    { name: "Node.js", category: "Backend", level: 3, years: 1 },
+    { name: "PHP", category: "Backend", level: 3, years: 1 },
     // Mobile
     { name: "Android Studio", category: "Mobile", level: 3, years: 1 },
     { name: "Java", category: "Mobile", level: 4, years: 2 },
