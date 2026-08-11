@@ -16,11 +16,12 @@ export function formatRelativeDate(iso: string): string {
 
   if (diffDays === 0) return "today";
   if (diffDays === 1) return "yesterday";
-  if (diffDays < 30) return `${diffDays}d ago`;
-  const diffMonths = Math.floor(diffDays / 30);
-  if (diffMonths < 12) return `${diffMonths}mo ago`;
-  const diffYears = Math.floor(diffMonths / 12);
-  return `${diffYears}y ago`;
+  if (diffDays < 5) return `${diffDays} days ago`;
+
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
 }
 
 export function formatDate(iso: string): string {
