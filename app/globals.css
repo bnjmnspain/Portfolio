@@ -3,25 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --bg: #fbfaf7;
+  --bg: #F2F4F3;
   --ink: #16150f;
   --ink-soft: #57544c;
-  --line: #dedad0;
-  --navy: #0c1d38;
+  --line: #d0d4d3;
+  --navy: #05195F;
   --navy-ink: #f3f1ea;
-  --sage: #8a9c5c;
-  --sage-dark: #6f8148;
+  --sage: #3E885B;
+  --sage-dark: #326b41;
   --sky: #cfe6f2;
   --clay: #c96f4a;
+  --bubble: #5299D3;
 }
 
 .dark {
-  --bg: #10130f;
+  --bg: #0A0908;
   --ink: #f3f1ea;
   --ink-soft: #a6a294;
-  --line: #2a2a22;
+  --line: #1a1a17;
   --navy: #f3f1ea;
-  --navy-ink: #0c1d38;
+  --navy-ink: #05195F;
   --sage: #a3b876;
   --sage-dark: #cfe6f2;
   --sky: #1c2a33;
@@ -210,8 +211,8 @@ body {
 .square-bubble {
   position: absolute;
   bottom: -150px;
-  background: var(--line);
-  border: 1px solid var(--ink-soft);
+  background: var(--bubble);
+  border: 1px solid var(--bubble);
   opacity: 0.4;
   animation: riseUp linear infinite;
 }
