@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Menu, X, Compass } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
@@ -17,9 +18,54 @@ const NAV_LINKS = [
   { href: "/contact", label: "Contact" },
 ];
 
+const homeVariants = {
+  idle: {
+    y: [0, -2, 0],
+    transition: {
+      duration: 2.5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+  hover: {
+    y: 0,
+    scale: 1.15,
+    rotate: [0, -8, 8, -4, 4, 0],
+    transition: {
+      duration: 0.6,
+      ease: "easeInOut",
+    },
+  },
+};
+
+const pathVariants = {
+  idle: { scale: 1 },
+  hover: {
+    scale: [1, 1.08, 0.95, 1.03, 1],
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+};
+
+const doorVariants = {
+  idle: { y: 0 },
+  hover: {
+    y: -1.5,
+    transition: { duration: 0.3, ease: "easeOut" },
+  },
+};
+
+const roofVariants = {
+  idle: { rotate: 0 },
+  hover: {
+    rotate: [-2, 2, -1, 1, 0],
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+};
+
 export function Navbar({ onOpenPalette }: { onOpenPalette: () => void }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [isHoveringHome, setIsHoveringHome] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -33,8 +79,10 @@ export function Navbar({ onOpenPalette }: { onOpenPalette: () => void }) {
             }
           }}
           className="text-ink"
+          onMouseEnter={() => setIsHoveringHome(true)}
+          onMouseLeave={() => setIsHoveringHome(false)}
         >
-          <svg
+          <motion.svg
             xmlns="http://www.w3.org/2000/svg"
             width="21"
             height="20"
@@ -44,10 +92,20 @@ export function Navbar({ onOpenPalette }: { onOpenPalette: () => void }) {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            variants={homeVariants}
+            animate={isHoveringHome ? "hover" : "idle"}
           >
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-            <polyline points="9 22 9 12 15 12 15 22" />
-          </svg>
+            <motion.path
+              d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+              variants={roofVariants}
+              animate={isHoveringHome ? "hover" : "idle"}
+            />
+            <motion.path
+              d="M9 22V12h6v10"
+              variants={doorVariants}
+              animate={isHoveringHome ? "hover" : "idle"}
+            />
+          </motion.svg>
         </Link>
 
         <div className="hidden lg:flex items-center gap-6">
@@ -73,7 +131,7 @@ export function Navbar({ onOpenPalette }: { onOpenPalette: () => void }) {
           <button
             onClick={onOpenPalette}
             aria-label="Open command palette"
-            className="hidden sm:flex items-center justify-center rounded-full border border-line px-2.5 py-1.5 text-ink-soft hover:text-ink hover:border-ink transition-colors"
+            className="hidden lg:flex items-center justify-center rounded-full border border-line px-2.5 py-1.5 text-ink-soft hover:text-ink hover:border-ink transition-colors"
           >
             <Compass size={15} />
           </button>

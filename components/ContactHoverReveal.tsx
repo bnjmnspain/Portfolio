@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const MAGNETIC_RANGE = 180;
@@ -10,7 +10,12 @@ const SPRING_DAMPING = 0.85;
 
 export function ContactHoverReveal({ children }: { children: React.ReactNode }) {
   const [isHovering, setIsHovering] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsTouch("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -36,19 +41,19 @@ export function ContactHoverReveal({ children }: { children: React.ReactNode }) 
   }, [x, y]);
 
   return (
-    <div className="relative grid sm:grid-cols-2 gap-8 sm:gap-16">
+    <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 md:gap-16">
       <div className="relative z-10">{children}</div>
 
       <div
         ref={containerRef}
-        className="relative hidden sm:flex items-center justify-center"
+        className="relative flex items-center justify-center"
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         <motion.div
           style={{ x: springX, y: springY }}
-          className="relative w-72 h-80"
+          className="relative w-48 h-56 sm:w-72 sm:h-80"
           transition={{ type: "spring", stiffness: SPRING_STIFFNESS, damping: SPRING_DAMPING }}
         >
           <div className="relative w-full h-full overflow-hidden rounded-sm">
@@ -59,7 +64,7 @@ export function ContactHoverReveal({ children }: { children: React.ReactNode }) 
               style={{ objectPosition: "center top", clipPath: "inset(0% 100% 0% 0%)" }}
               loading="eager"
               animate={{
-                clipPath: isHovering
+                clipPath: isHovering || isTouch
                   ? "inset(0% 0% 0% 0%)"
                   : "inset(0% 100% 0% 0%)",
                 scale: isHovering ? 0.96 : 1,
@@ -71,7 +76,7 @@ export function ContactHoverReveal({ children }: { children: React.ReactNode }) 
             />
             <motion.div
               className="absolute inset-0 flex items-center justify-center pointer-events-none"
-              animate={{ opacity: isHovering ? 0 : 1 }}
+              animate={{ opacity: isHovering || isTouch ? 0 : 1 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
               <span className="text-xs uppercase tracking-widest text-ink-soft/70 font-sans">
@@ -80,7 +85,7 @@ export function ContactHoverReveal({ children }: { children: React.ReactNode }) 
             </motion.div>
           </div>
           <motion.div
-            className="absolute -bottom-3 -right-3 w-72 h-80 -z-10 border-2 border-sage/30 rounded-sm"
+            className="absolute -bottom-3 -right-3 w-48 h-56 -z-10 border-2 border-sage/30 rounded-sm sm:w-72 sm:h-80"
             animate={{ x: isHovering ? -4 : 0, y: isHovering ? -4 : 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           />

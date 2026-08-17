@@ -33,6 +33,10 @@ export const metadata: Metadata = {
   description: siteConfig.tagline,
   keywords: [siteConfig.jobTitle, "software developer", "portfolio", siteConfig.name],
   authors: [{ name: siteConfig.name, url: siteConfig.siteUrl }],
+  icons: {
+    icon: "/box-bag.png",
+    apple: "/box-bag.png",
+  },
   openGraph: {
     title: `${siteConfig.name} — ${siteConfig.jobTitle}`,
     description: siteConfig.tagline,
