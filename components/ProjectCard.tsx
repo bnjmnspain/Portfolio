@@ -6,7 +6,7 @@ import { Reveal } from "./Reveal";
 export function ProjectCard({ repo, delay = 0 }: { repo: GithubRepo; delay?: number }) {
   return (
     <Reveal delay={delay}>
-      <article className="h-full border border-line rounded-lg p-4 hover:border-ink transition-colors bg-bg flex flex-col">
+      <article className="h-full border border-line rounded-lg p-4 hover:border-ink transition-colors bg-bg flex flex-col group">
         <div className="flex items-start justify-between gap-2 mb-1.5">
           <h3 className="font-serif text-base leading-snug line-clamp-2">{repo.name}</h3>
           <div className="flex items-center gap-2 shrink-0">
@@ -32,7 +32,7 @@ export function ProjectCard({ repo, delay = 0 }: { repo: GithubRepo; delay?: num
             </a>
           </div>
         </div>
-        <p className="text-xs text-ink-soft mb-2 line-clamp-2 flex-1">
+        <p className="text-xs text-ink-soft mb-2 line-clamp-2 group-hover:line-clamp-none group-hover:overflow-visible transition-all duration-300 flex-1">
           {repo.description ?? "No description provided."}
         </p>
         <div className="flex items-center justify-between text-[11px] font-mono text-ink-soft">

@@ -61,16 +61,14 @@ export function ContactHoverReveal({ children }: { children: React.ReactNode }) 
               src="/Portfolio/graduation_pic.jpeg"
               alt="Benjamin Florence Nicol E. Saludes"
               className="absolute inset-0 w-full h-full object-cover"
-              style={{ objectPosition: "center top", clipPath: "inset(0% 100% 0% 0%)" }}
+              style={{ objectPosition: "center top" }}
               loading="eager"
               animate={{
-                clipPath: isHovering || isTouch
-                  ? "inset(0% 0% 0% 0%)"
-                  : "inset(0% 100% 0% 0%)",
-                scale: isHovering ? 0.96 : 1,
+                opacity: isHovering || isTouch ? 1 : 0,
+                scale: isHovering ? 0.96 : 1.05,
               }}
               transition={{
-                clipPath: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] },
+                opacity: { duration: 0.5, ease: "easeOut" },
                 scale: { duration: 0.6, ease: "easeOut" },
               }}
             />
