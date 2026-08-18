@@ -14,7 +14,6 @@ const DESTINATIONS = [
   { label: "Experience", href: "/experience" },
   { label: "Certificates", href: "/certifications" },
   { label: "Contact", href: "/contact" },
-  { label: "Download resume", href: siteConfig.resumeUrl },
   { label: "Email me", href: `https://mail.google.com/mail/u/0/?fs=1&to=${siteConfig.email}&tf=cm` },
   { label: "GitHub profile", href: `https://github.com/${siteConfig.githubUsername}` },
 ];

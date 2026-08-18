@@ -119,6 +119,12 @@ export const siteConfig: SiteConfig = {
       date: "2025",
       credentialUrl: "https://www.credly.com/go/RPo4AJ1Q",
     },
+    {
+      name: "Internship",
+      issuer: "IBM Solutions Delivery, Inc - JAPAN CSU",
+      date: "2026",
+      credentialUrl: "https://drive.google.com/drive/u/0/folders/1oUnMBVB7C902YrSYEWZSsL4dKhX6HFuH",
+    },
   ],
 
   education: [
