@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 import { ResumeButton } from "@/components/ResumeButton";
+import Text3DFlip from "@/components/Text3DFlip";
 
 const ICONS = { github: Github, linkedin: Linkedin, mail: Mail } as const;
 
@@ -48,7 +49,22 @@ export function Hero() {
           custom={0.25}
           className="font-serif font-normal text-[clamp(2.2rem,6vw,4.6rem)] leading-[1.05] max-w-[18ch]"
         >
-          {siteConfig.name}
+          <Text3DFlip
+            text="Benjamin Florence Nicol E. Saludes"
+            animation="enter"
+            animationInterval={5000}
+            rotateDirection="top"
+            color="currentColor"
+            staggerDuration={0.03}
+            font={{
+              fontFamily: "inherit",
+              fontWeight: "inherit",
+              fontSize: "inherit",
+              lineHeight: "inherit",
+              letterSpacing: "inherit",
+              textAlign: "center",
+            }}
+          />
         </motion.h1>
 
         <motion.p

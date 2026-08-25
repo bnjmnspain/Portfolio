@@ -63,6 +63,7 @@ export function ContactHoverReveal({ children }: { children: React.ReactNode }) 
               className="absolute inset-0 w-full h-full object-cover"
               style={{ objectPosition: "center top" }}
               loading="eager"
+              initial={{ opacity: 0, scale: 1.05 }}
               animate={{
                 opacity: isHovering || isTouch ? 1 : 0,
                 scale: isHovering ? 0.96 : 1.05,

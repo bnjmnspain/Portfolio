@@ -89,21 +89,21 @@ export const siteConfig: SiteConfig = {
          "Identified opportunities to improve business processes through technology.",
        ],
      },
-     {
-       company: "IBM Solutions Delivery Philippines",
-       position: "Intern",
-       location: "UP-Ayala Land TechnoHub, Quezon City",
-       start: "Feb 2026",
-       end: "May 2026",
-       responsibilities: [
-         "Built and maintained automated test suites using Selenium.",
-         "Used Java and Git/GitBash in day-to-day version-control workflows.",
-       ],
-       achievements: [
-         "Received the IBM Best Improved Award 2026.",
-         "Handled tasks independently against real deadlines in a professional IT environment.",
-       ],
-     },
+      {
+        company: "IBM Solutions Delivery Philippines",
+        position: "Intern - JAPAN CSU",
+        location: "UP-Ayala Land TechnoHub, Quezon City",
+        start: "Feb 2026",
+        end: "May 2026",
+        responsibilities: [
+          "Built and maintained automated test suites using Selenium.",
+          "Used Java and Git/GitBash in day-to-day version-control workflows.",
+        ],
+        achievements: [
+          "Received the IBM Best Improved Award 2026.",
+          "Handled tasks independently against real deadlines in a professional IT environment.",
+        ],
+      },
   ],
 
   certifications: [
